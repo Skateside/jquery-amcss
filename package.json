@@ -1,0 +1,21 @@
+{
+  "name": "jquery-amcss",
+  "version": "1.0.0",
+  "description": "jQuery plugin to assist working with AMCSS",
+  "main": "index.js",
+  "author": "James \"Skateside\" Long <sk85ide@hotmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "chai": "^4.1.1",
+    "docdash": "^0.4.0",
+    "gulp": "^3.9.1",
+    "gulp-concat-util": "^0.5.5",
+    "gulp-jsdoc3": "^1.0.1",
+    "gulp-jslint": "^1.0.10",
+    "gulp-minify": "^1.0.0",
+    "gulp-mocha-phantomjs": "^0.12.1",
+    "gulp-sourcemaps": "^2.6.0",
+    "mocha": "^3.5.0",
+    "mocha-phantomjs": "^4.1.0"
+  }
+}

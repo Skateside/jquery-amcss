@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>jQuery - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Externals</h3><ul><li><a href="external-jQuery.html">jQuery</a><ul class='methods'><li data-type='method'><a href="external-jQuery.html#.normaliseAm">normaliseAm</a></li><li data-type='method'><a href="external-jQuery.html#addAm">addAm</a></li><li data-type='method'><a href="external-jQuery.html#am">am</a></li><li data-type='method'><a href="external-jQuery.html#hasAm">hasAm</a></li><li data-type='method'><a href="external-jQuery.html#removeAm">removeAm</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html#getAllPrefixed">getAllPrefixed</a></li><li><a href="global.html#getAttribute">getAttribute</a></li><li><a href="global.html#interpretString">interpretString</a></li><li><a href="global.html#isElement">isElement</a></li><li><a href="global.html#setAttribute">setAttribute</a></li><li><a href="global.html#startsWith">startsWith</a></li><li><a href="global.html#toObject">toObject</a></li><li><a href="global.html#unique">unique</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">jQuery</h1>
+    
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+        jQuery
+        </h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="jquery.amcss.js.html">jquery.amcss.js</a>, <a href="jquery.amcss.js.html#line32">line 32</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><p><a href="http://jquery.com">jQuery</a></p></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+        
+            <div class="description"><p>This is a jQuery plugin.</p></div>
+        
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id=".AM_PREFIX"><span class="type-signature">(static) </span>AM_PREFIX<span class="type-signature"> :String</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="jquery.amcss.js.html">jquery.amcss.js</a>, <a href="jquery.amcss.js.html#line441">line 441</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>The prefix for the AMCSS attributes. This intentionally includes the hyphen
+so that the value can be set to an empty string (&quot;&quot;) if no prefix is wanted.
+Changing this value will create different results in different values
+returned from <a href="external-jQuery.html#.normaliseAm">jQuery.normaliseAm</a>.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5>Example</h5>
+    
+        <p class="code-caption">Changing $.AM_PREFIX updates $.normaliseAm</p>
+    
+    <pre class="prettyprint"><code>$.AM_PREFIX = "am-"; // This is the default.
+$.normaliseAm("button"); // -> "am-button"
+
+$.AM_PREFIX = "data-am-";
+$.normaliseAm("button"); // -> "data-am-button"</code></pre>
+
+
+
+        
+            
+<h4 class="name" id=".amHooks"><span class="type-signature">(static) </span>amHooks<span class="type-signature"> :Object.&lt;<a href="global.html#AMCSS_hook">AMCSS_hook</a>></span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="jquery.amcss.js.html">jquery.amcss.js</a>, <a href="jquery.amcss.js.html#line485">line 485</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>A collection of hooks that change the behaviour of getting or setting AMCSS
+attributes. They are only called when using
+<a href="external-jQuery.html#am">jQuery#am</a> and
+<a href="external-jQuery.html#addAm">jQuery#addAm</a>. The hooks are all named after
+the unprefixed AMCSS attributes. If you are ever in doubt, the easiest way to
+get the hook name is
+<code>$.normaliseAm(<strong>ATTRIBUTE</strong>).slice($.AM_PREFIX.length)</code>.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object.&lt;<a href="global.html#AMCSS_hook">AMCSS_hook</a>></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>// Suppose that an AMCSS attribute cannot have values, only the attribute
+// itself.
+$.amHooks.empty = {
+    set: function (element, value, name) {
+        element.setAttribute(name, "");
+    },
+    get: function (element) {
+        return "";
+    }
+};</code></pre>
+
+
+
+        
+            
+<h4 class="name" id=".normalizeAm"><span class="type-signature">(static) </span>normalizeAm<span class="type-signature"></span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="jquery.amcss.js.html">jquery.amcss.js</a>, <a href="jquery.amcss.js.html#line455">line 455</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Alias for <a href="external-jQuery.html#.normaliseAm">jQuery.normaliseAm</a>.</p>
+</div>
+
+
+
+
+
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id=".normaliseAm"><span class="type-signature">(static) </span>normaliseAm<span class="signature">(attribute)</span><span class="type-signature"> &rarr; {String}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="jquery.amcss.js.html">jquery.amcss.js</a>, <a href="jquery.amcss.js.html#line411">line 411</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="external-jQuery.html#.AM_PREFIX">external:jQuery.AM_PREFIX</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Normalises the attribute so that it always starts with the AMCSS prefix
+(&quot;am-&quot; by default). If the attribute already starts with the AMCSS prefix, no
+action is taken.
+<br><br>
+The other AMCSS methods (<a href="external-jQuery.html#am">jQuery#am</a>,
+<a href="external-jQuery.html#addAm">jQuery#addAm</a>,
+<a href="external-jQuery.html#hasAm">jQuery#hasAm</a> and
+<a href="external-jQuery.html#removeAm">jQuery#removeAm</a>) always pass their given
+attributes through this function so there is no need to do that manually.
+<br><br>
+This function is aliased as
+<a href="external-jQuery.html#.normalizeAm">jQuery.normalizeAm</a>.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Examples</h5>
+    
+        <p class="code-caption">Attributes are normalised</p>
+    
+    <pre class="prettyprint"><code>// $.AM_PREFIX = "am-"
+$.normaliseAm("button");    // -> "am-button"
+$.normaliseAm("am-button"); // -> "am-button"</code></pre>
+
+        <p class="code-caption">Changing $.AM_PREFIX</p>
+    
+    <pre class="prettyprint"><code>// $.AM_PREFIX = "am-"
+$.normaliseAm("button"); // -> "am-button"
+$.AM_PREFIX = "data-"
+$.normaliseAm("button"); // -> "data-button"</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>attribute</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Attribute to normalise.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Normalised attribute.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="addAm"><span class="type-signature"></span>addAm<span class="signature">(attr, value)</span><span class="type-signature"> &rarr; {jQuery}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="jquery.amcss.js.html">jquery.amcss.js</a>, <a href="jquery.amcss.js.html#line749">line 749</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Adds one or more values to the specified AMCSS attribute. The values can be
+added using a pair of strings, an object of key/value pairs or the value can
+be a function to derive the value. In all cases, the attribute is passed
+through <a href="external-jQuery.html#.normaliseAm">jQuery.normaliseAm</a> so there is
+no need to do this manually (although it will not cause any problems if you
+do). If the attribute does not exist, it is created before the value(s)
+is/are added.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Examples</h5>
+    
+        <p class="code-caption">Adding a value with a string</p>
+    
+    <pre class="prettyprint"><code>// Markup is &lt;div id="one">
+$("#one").addAm("alpha", "one");
+// Now markup is &lt;div id="one" am-alpha="one">
+$("#one").addAm("alpha", "two three");
+// Now markup is &lt;div id="one" am-alpha="one two three"></code></pre>
+
+        <p class="code-caption">Adding a value with a function</p>
+    
+    <pre class="prettyprint"><code>// Markup is &lt;div id="one" am-alpha="one">
+$("#one").addAm("alpha", function (index, value) {
+    return value.toUpperCase() + "_" + index;
+});
+// Now markup is &lt;div id="one" am-alpha="one ONE_0"></code></pre>
+
+        <p class="code-caption">Adding a value with an object</p>
+    
+    <pre class="prettyprint"><code>// Markup is &lt;div id="one" am-alpha="one">
+$("#one").addAm({
+    alpha: function (index, value) {
+        return value.toUpperCase() + "_" + index;
+    },
+    bravo: "two three"
+});
+// Now markup is
+// &lt;div id="one" am-alpha="one ONE_0" am-bravo="two three"></code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>attr</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+|
+
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Attribute to modify.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+|
+
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Either the value(s) to add or a function that generates the
+          value(s) to add.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The jQuery instance.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">jQuery</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="am"><span class="type-signature"></span>am<span class="signature">(attr<span class="signature-attributes">opt</span>, value<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {jQuery|Object|String|undefined}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="jquery.amcss.js.html">jquery.amcss.js</a>, <a href="jquery.amcss.js.html#line621">line 621</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Sets or gets an AMCSS attribute.
+<br><br>
+This function has 3 modes:
+<br>- Pass 0 arguments to get a collection of all AMCSS attributes.
+<br>- Pass 1 argument to get the value of that attribute.
+<br>- Pass 2 arguments to set the value of that attribute.
+In all cases, the attribute is automatically passed through
+<a href="external-jQuery.html#.normaliseAm">jQuery.normaliseAm</a> so there is no need
+to do this manually (although it will not cause any problems if you do).</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Examples</h5>
+    
+        <p class="code-caption">Setting an attribute</p>
+    
+    <pre class="prettyprint"><code>// Markup is &lt;div id="one">
+$("#one").am("alpha", "one");
+// Markup is now &lt;div id="one" am-alpha="one">
+$("#one").am("alpha", function (index, value) {
+    return index + value + value;
+});
+// Markup is now &lt;div id="one" am-alpha="0oneone">
+$("#one").am({
+    bravo: "two",
+    charlie: "three"
+});
+// Markup is now
+// &lt;div id="one" am-alpha="0oneone" am-bravo="two" am-charlie="three"></code></pre>
+
+        <p class="code-caption">Getting an attribute</p>
+    
+    <pre class="prettyprint"><code>// Markup is &lt;div id="one" am-test="one">
+$("#one").am("test"); // -> "one"
+$("#one").am("fake"); // -> undefined</code></pre>
+
+        <p class="code-caption">Getting all AMCSS attributes</p>
+    
+    <pre class="prettyprint"><code>// Markup is &lt;div id="one" am-test="one">
+$("#one").am(); // -> {"am-test": "one"}</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>attr</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+|
+
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Attribute to get or set.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+|
+
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Value of the attribute to set.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Either the jQuery instance (when getting or setting) or an object
+          of all the AMCSS attributes.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">jQuery</span>
+|
+
+<span class="param-type">Object</span>
+|
+
+<span class="param-type">String</span>
+|
+
+<span class="param-type">undefined</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="hasAm"><span class="type-signature"></span>hasAm<span class="signature">(attribute, value<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="jquery.amcss.js.html">jquery.amcss.js</a>, <a href="jquery.amcss.js.html#line675">line 675</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Checks to see if the AMCSS attribute exists or that it contains a specific
+value. Thw attribute is automatically passed through
+<a href="external-jQuery.html#.normaliseAm">jQuery.normaliseAm</a> so there is no need
+to do this manually (although it will not cause any problems if you do).</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Examples</h5>
+    
+        <p class="code-caption">Checking for the attribute</p>
+    
+    <pre class="prettyprint"><code>// Markup is &lt;div id="one" am-alpha="one two three">
+$("#one").hasAm("alpha"); // -> true
+$("#one").hasAm("bravo"); // -> false</code></pre>
+
+        <p class="code-caption">Checking for the value</p>
+    
+    <pre class="prettyprint"><code>// Markup is &lt;div id="one" am-alpha="one two three">
+$("#one").hasAm("alpha", "one");  // -> true
+$("#one").hasAm("alpha", "four"); // -> false</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>attribute</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Attribute to check.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional value to check.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>true if the attribute exists (or contains the value) false
+          otherwise.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="removeAm"><span class="type-signature"></span>removeAm<span class="signature">(attr<span class="signature-attributes">opt</span>, value<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {jQuery}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="jquery.amcss.js.html">jquery.amcss.js</a>, <a href="jquery.amcss.js.html#line817">line 817</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Removes values from the attribute or the attribute itself. If no arguments
+are passed then all AMCSS attributes are removed.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Examples</h5>
+    
+        <p class="code-caption">Removing value with a string</p>
+    
+    <pre class="prettyprint"><code>// Markup is &lt;div id="one" am-test="one two three">
+$("#one").removeAm("test", "two");
+// Now markup is &lt;div id="one" am-test="one three"></code></pre>
+
+        <p class="code-caption">Removing an attribute with a function</p>
+    
+    <pre class="prettyprint"><code>// Markup is &lt;div id="one" am-test="a0 a1 a2">
+$("#one").removeAm("test", function (index, value) {
+    return "a" + index;
+});
+// Now markup is &lt;div id="one" am=test="a1 a2"></code></pre>
+
+        <p class="code-caption">Removing the attribute</p>
+    
+    <pre class="prettyprint"><code>// Markup is &lt;div id="one" am-test="one two three">
+$("#one").removeAm("test");
+// Now markup is &lt;div id="one"></code></pre>
+
+        <p class="code-caption">Removing all AMCSS attributes</p>
+    
+    <pre class="prettyprint"><code>// Markup is &lt;div id="one" am-alpha="one" am-bravo="two">
+$("#one").removeAm();
+// Now markup is &lt;div id="one"></code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>attr</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Attribute to remove or whose values should be removed.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+|
+
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional value(s) to remove or function to derive the value(s) to
+          remove.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>jQuery instance.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">jQuery</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.4</a> on Tue Aug 08 2017 14:11:29 GMT+0100 (BST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
